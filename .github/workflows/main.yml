@@ -27,8 +27,7 @@ jobs:
         curl -L https://mesa3d.org/archive/mesa-24.0.2.tar.xz | tar xJf -
 
     - name: Configure and build Mesa
-      run: |
-        cd ~/mesa/mesa-24.0.2
+      run:  
         mkdir build
         meson setup -Dgallium-drivers=swrast -Ddri-drivers= -Dvulkan-drivers= -Dprefix=~/mesa/build/install -Dlibunwind=disabled -Dosmesa=true -Degl=disabled -Dgles1=disabled -Dgles2=disabled -Dglx=disabled -Dvalgrind=disabled -Dc_std=c11 -Dshared-llvm=false -Dshared-glapi=enabled
         ninja -C build
